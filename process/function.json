@@ -1,0 +1,19 @@
+{
+  "bindings": [
+    {
+      "name": "paymentFileMessage",
+      "type": "serviceBusTrigger",
+      "direction": "in",
+      "topicName": "process",
+      "subscriptionName": "batch-processor",
+      "connection": "AZURE_SERVICE_BUS_CONNECTION_STRING"
+    },
+    {
+      "name": "paymentFileBlob",
+      "type": "blob",
+      "path": "{serviceBusTrigger}",
+      "connection": "AzureWebJobsStorage",
+      "direction": "in"
+    }
+  ]
+}
